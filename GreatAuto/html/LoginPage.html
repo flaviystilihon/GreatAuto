@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Authorization</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/LoginPage1.css">
+        <script type="text/javascript" src="javascript/AuthenticationValidator.js"></script>
+        <script type="text/javascript" src="javascript/AuthenticationCaptcha.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <h1>GreatAuto</h1>
+            
+            <div id="welcome_message">Login or registrate to enter</div>
+            
+            <nav>
+            <a class="inner_link" href="index.php?page=home_page">Home</a>
+            <a class="inner_link" href="index.php?page=about_us_page">About us</a>
+            <a class="inner_link" href="index.php?page=contacts_page">Contacts</a>
+            <a class="inner_link" href="index.php?page=reviews_page">Reviews</a>
+            
+            AUTHENTICATIONBUTTON
+            </nav>
+            
+        </header>
+                
+        <main>
+            
+            <div id="registration_box">
+                <h2>Registration</h2>
+                <form method="post" action="index.php?page=registrating" onsubmit="return validateRegistration(this)">
+                    <p>Your name (5 to 30 signs; only letters and numbers are allowed):</p>
+                    <input type="text" name="form_username" maxlength="30" placeholder="Your name" ><br>
+                    <p>Your password (6 to 20 signs; numbers, lower case and upper case letters are required):</p>
+                    <input type="password" name="form_password" maxlength="20" placeholder="Your password"><br>
+                    <p>Repeat password:</p>
+                    <input type="password" name="form_password_repeat" maxlength="20" placeholder="Repeat password"><br>
+                    <p>Your email (up to 30 signs):</p>
+                    <input type="email" name="form_email" maxlength="30" placeholder="Your email"><br>
+                    <div class='captcha_box' id="captcha1"></div>
+                    <div id="registration_error_box"></div>
+                    <input type="submit" value="Registrate me">
+                </form>
+            </div>
+
+            <div id="login_box">
+                <h2>Login</h2>
+                <form method="post" action="index.php?page=logining" onsubmit="return validateLogin(this)">
+                    <p>Your name (5 to 30 signs; only letters and numbers are allowed):</p>
+                    <input type="text" name="form_username" maxlength="30" placeholder="Your name"><br>
+                    <p>Your password (6 to 20 signs; numbers, lower case and upper case letters are required):</p>
+                    <input type="password" name="form_password" maxlength="20" placeholder="Your password"><br>
+                    <div class='captcha_box' id="captcha2"></div>
+                    <div id="login_error_box"></div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                    async defer>
+            </script>
+
+            <!--ERRORMESSAGE-->
+        
+        </main>
+        
+        <footer></footer>
+    </body>
+</html>
